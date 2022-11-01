@@ -1,53 +1,37 @@
-from python_easy_facebook_api import FbApi
-import requests
-import os
-import sched, time
-from flask import Flask
+import sched
+import time
 import threading
 
-app = Flask(__name__)
-
-api = FbApi(page_id=os.environ["PAGE_ID"], access_token=os.environ["TOKEN"])
-
-
-def createCatPost():
-    photo = requests.get(
-        "https://api.thecatapi.com/v1/images/search").json()[0]['url']
-
-    r = api.TextWithPhotoPost(image_url=photo,
-                              content="Random cat").submitPost()
-
-    print(r.text)
-
-print("Creating...")
-createCatPost()
-print("Created!")
-
-
-@app.route('/')
-def index():
-    return 'Hello from Flask!'
-
-def initServer():
-  app.run(host='0.0.0.0', port=81)
-
+from create_post import createCatPost
+from server import startServer
 
 s = sched.scheduler(time.time, time.sleep)
-delay = 60 * 20
+delay = 5  # Every 20 minutes
 
 
 def repeat(sc):
-    print("Creating...")
     createCatPost()
-    print("Created!")
     sc.enter(delay, 1, repeat, (sc, ))
 
+
+createCatPost()
+
+
 def initRepeat():
-  s.enter(delay, 1, repeat, (s, ))
-  s.run()
+    s.enter(delay, 1, repeat, (s, ))
+    s.run()
 
-t1 = threading.Thread(target=initServer)
-t2 = threading.Thread(target=initRepeat)
 
-t1.start()
-t2.start()
+"""
+The problem with having many processes is that the program can only run one process at a time.
+The solution is to run that process in parallel, using another CPU thread
+"""
+
+# Define the threads
+server_thread = threading.Thread(target=startServer)
+repeat_post_upload_thread = threading.Thread(target=initRepeat)
+
+# Start the threads
+server_thread.start()
+
+repeat_post_upload_thread.start()
