@@ -1,0 +1,5 @@
+/venv
+/.config
+/.upm
+.replit
+replit.nix
