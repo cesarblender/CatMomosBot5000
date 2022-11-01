@@ -6,7 +6,7 @@ from create_post import createCatPost
 from server import startServer
 
 s = sched.scheduler(time.time, time.sleep)
-delay = 5  # Every 20 minutes
+delay = 60*20  # Every 20 minutes
 
 
 def repeat(sc):
