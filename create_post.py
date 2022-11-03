@@ -16,7 +16,7 @@ def createCatPost():
 
     r = api.TextWithPhotoPost(
         image_url=photo,
-        content="Random cat\nBot source code: https://github.com/seokkuuu/RandomCatBot\nLirary used: https://github.com/seokkuuu/python_easy_facebook_api\nLibrary package url: https://pypi.org/project/python-easy-facebook-api\n\nApp made by:\nhttps://facebook.com/seokkuxd\nhttps://github.com/seokkuuu\n"
+        content="Random cat\nBot source code: https://github.com/seokkuuu/RandomCatBot\nLibrary used: https://github.com/seokkuuu/python_easy_facebook_api\nLibrary package url: https://pypi.org/project/python-easy-facebook-api\n\nApp made by:\nhttps://facebook.com/seokkuxd\nhttps://github.com/seokkuuu\n"
     ).submitPost()
 
     print(r.text)
