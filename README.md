@@ -2,7 +2,7 @@
 
 A **Random Facebook Bot**, that uploads **Cat Photos** every 20 minutes.
 
-This is an example of my API written in Python for content creation automation, [Python Easy Facebook API](https://github.com/seokkuuu/easy_python_facebook_api)
+This is an example of my API written in Python for content creation automation, [Python Easy Facebook API](https://github.com/seokkuuu/python_easy_facebook_api)
 
 # Installation
 
