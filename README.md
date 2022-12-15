@@ -17,4 +17,4 @@ This is an example of my API written in Python for content creation automation, 
 
 ## Contribution
 
-You're able to contribute or fork this repository, but if you fork this repository to create something malicious, **I'm not and I will not be responsible of anything that others do with this code, just anything that others do with this code, It's no my problem**.
+You're able to contribute or fork this repository, but if you fork this repository to create something malicious, **I'm not and I will not be responsible of anything that others do with this code. Just, anything that others do with this code is not my problem**.
