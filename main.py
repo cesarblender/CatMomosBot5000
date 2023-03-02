@@ -1,37 +1,32 @@
-import sched
+import requests
+import random
 import time
-import threading
+import facebook
+import os
 
-from create_post import createCatPost
-from server import startServer
+# Configuración de la API de Facebook
+token = os.getenv("token")
+graph = facebook.GraphAPI(token)
 
-s = sched.scheduler(time.time, time.sleep)
-delay = 60*20  # Every 20 minutes
+# URL de las imágenes de gatos en CATAAS
+cat_urls = [
+    "https://cataas.com/cat/cute/says/random%20cat%20bot",
+    "https://cataas.com/cat/says/random%20cat%20bot",
+    "https://cataas.com/cat/says/random%20cat%20bot?filter=pixel",
+    "https://picsum.photos/64/64"
+]
 
+# Función para obtener una imagen aleatoria de gato de CATAAS
+def get_random_cat_url():
+    return random.choice(cat_urls)
 
-def repeat(sc):
-    createCatPost()
-    sc.enter(delay, 1, repeat, (sc, ))
-
-
-createCatPost()
-
-
-def initRepeat():
-    s.enter(delay, 1, repeat, (s, ))
-    s.run()
-
-
-"""
-The problem with having many processes is that the program can only run one process at a time.
-The solution is to run that process in parallel, using another CPU thread
-"""
-
-# Define the threads
-server_thread = threading.Thread(target=startServer)
-repeat_post_upload_thread = threading.Thread(target=initRepeat)
-
-# Start the threads
-server_thread.start()
-
-repeat_post_upload_thread.start()
+# Función para publicar una foto de gato en Facebook
+def post_cat_photo():
+    cat_url = get_random_cat_url()
+    img_data = requests.get(cat_url).content
+    graph.put_photo(image=img_data, message="Gato aleatorio\nCreador del bot: seokku GitHub y Facebook: @seokkuuu")
+    print("Publicación realizada en Facebook a las ", time.strftime("%H:%M:%S"))
+# Bucle principal del bot que publica una foto de gato cada 30 minutos
+while True:
+    post_cat_photo()
+    time.sleep(30 * 60)  # 30 minutos
