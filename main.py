@@ -3,18 +3,15 @@ import random
 import time
 import facebook
 import os
+import dotenv
+
+dotenv.load_dotenv()
+
+from src.sources import cat_urls
 
 # Configuración de la API de Facebook
 token = os.getenv("token")
 graph = facebook.GraphAPI(token)
-
-# URL de las imágenes de gatos en CATAAS
-cat_urls = [
-    "https://cataas.com/cat/cute/says/random%20cat%20bot",
-    "https://cataas.com/cat/says/random%20cat%20bot",
-    "https://cataas.com/cat/says/random%20cat%20bot?filter=pixel",
-    "https://picsum.photos/64/64"
-]
 
 # Función para obtener una imagen aleatoria de gato de CATAAS
 def get_random_cat_url():
