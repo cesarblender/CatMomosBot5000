@@ -29,4 +29,4 @@ def post_cat_photo():
 # Bucle principal del bot que publica una foto de gato cada 30 minutos
 while True:
     post_cat_photo()
-    time.sleep(120*3)  # 2 horas
+    time.sleep(120*3)  # 3 horas
