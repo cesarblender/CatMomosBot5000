@@ -24,9 +24,9 @@ def get_random_cat_url():
 def post_cat_photo():
     cat_url = get_random_cat_url()
     img_data = requests.get(cat_url).content
-    graph.put_photo(image=img_data, message="Gato aleatorio\nCreador del bot: seokku GitHub y Facebook: @seokkuuu")
+    graph.put_photo(image=img_data, message="CatMomo")
     print("Publicación realizada en Facebook a las ", time.strftime("%H:%M:%S"))
 # Bucle principal del bot que publica una foto de gato cada 30 minutos
 while True:
     post_cat_photo()
-    time.sleep(30 * 60)  # 30 minutos
+    time.sleep(120*3)  # 2 horas
