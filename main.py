@@ -8,7 +8,6 @@ dotenv.load_dotenv()
 
 def main():
     bot = Bot()
-    bot.postFreq=1
     bot.daemon = True
     bot.start()
     server.start_server()
