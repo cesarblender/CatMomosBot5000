@@ -9,7 +9,7 @@ source_images = {
 }
 
 def get_random_cat():
-    keys = source_images.keys()
+    keys = list(source_images.keys())
     source = random.choice(keys)
 
     source_image = source_images[source]

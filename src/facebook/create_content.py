@@ -17,5 +17,5 @@ def create_comment(post_id: str, message: str) -> str:
 
 def create_post_with_image(image: str, content: str) -> str:
     graph = getGraphAPI()
-    photo = graph.put_photo(image=image, content=content)
+    photo = graph.put_photo(image=image, message=content)
     return photo["id"]

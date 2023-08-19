@@ -19,9 +19,9 @@ def interact_with_model(model_name, inputs, params=None, with_seed=False, seed_b
     if params is None:
         params = {
             "max_new_tokens": 40,
-            "temperature": 0.7,
-            "repetition_penalty": 1.5,
-            "top_k": 10
+            "temperature": 0.6,
+            "repetition_penalty": 1,
+            "top_k": 15
         }
 
     if with_seed:
@@ -44,6 +44,7 @@ def interact_with_model(model_name, inputs, params=None, with_seed=False, seed_b
     generated_text = resp[0]["generated_text"]
 
     if with_seed and generated_text:
+        params["seed"] = seed
         generated_text = generated_text.split(str(seed))[1]
 
     return generated_text, params
