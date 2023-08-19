@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "randomcatbot"
-version = "0.1.0"
-description = "Post random cat images on facebook"
+name = "catmomosbot5000"
+version = "3.0.0"
+description = "Post 'momos' with cat theme on Facebook"
 authors = ["seokkuuu"]
 license = "MIT"
 readme = "README.md"
