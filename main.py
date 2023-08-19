@@ -1,11 +1,12 @@
+import dotenv
+
+dotenv.load_dotenv()
+
 import requests
 import random
 import time
 import facebook
 import os
-import dotenv
-
-dotenv.load_dotenv()
 
 from src.sources import cat_urls
 
@@ -23,7 +24,8 @@ def post_cat_photo():
     img_data = requests.get(cat_url).content
     graph.put_photo(image=img_data, message="CatMomo")
     print("Publicación realizada en Facebook a las ", time.strftime("%H:%M:%S"))
-# Bucle principal del bot que publica una foto de gato cada 30 minutos
+
+# Bucle principal del bot que publica una foto de gato cada 3 horas
 while True:
     post_cat_photo()
     time.sleep(120*3)  # 3 horas
