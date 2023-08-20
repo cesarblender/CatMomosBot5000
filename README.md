@@ -1,20 +1,50 @@
-# RandomCatBot
+# CatMomosBot5000
 
-A **Random Facebook Bot**, that uploads **Cat Photos** every 20 minutes.
+A **Facebook Bot**, that uploads cat memes randomly or using AI.
 
-This is an example of my API written in Python for content creation automation, [Python Easy Facebook API](https://github.com/seokkuuu/python_easy_facebook_api)
+## Features
 
-# Installation
+- Uploads randomly generated cat memes to Facebook.
+- Utilizes AI to generate some random text.
+- Open-source project licensed under the MIT License.
 
-- You must add the following environment variables, I explain how to get this in the `README` of the [Python Easy Facebook API](https://github.com/seokkuuu/easy_python_facebook_api) repo.
+## How It Works
 
-  - `PAGE_ID` This means the Facebook Page API, obviously this is the ID of the page to upload the cat posts.
-  - `TOKEN` This means the Facebook Page Access Token.
+CatMomosBot is built using Python and leverages the Facebook API to post cat memes on Facebook.
 
-- Install the poetry modules specified in [this file](./pyproject.toml)
+## Installation
 
-- Run the `main.py` file, with `python main.py` or `python3 main.py` or `py main.py`.
+1. Clone this repository:
+
+```
+git clone https://github.com/seokkuuu/CatMomosBot5000.git
+cd CatMomosBot5000
+```
+
+2. Install the required dependencies using poetry:
+```
+poetry shell
+poetry install
+```
+
+3. Set up a dotenv `.env` file with theese variables.
+```
+HF_API_KEY="Your HuggingFace API key here"
+TOKEN="Your Facebook Graph API token here"
+```
+
+4. Run the bot:
+
+```
+python main.py
+```
 
 ## Contribution
 
-You're able to contribute or fork this repository, but if you fork this repository to create something malicious, **I'm not and I will not be responsible of anything that others do with this code. Just, anything that others do with this code is not my problem**.
+Contributions to CatMomosBot are welcome! Whether you want to add new features, improve AI meme generation, or fix bugs, feel free to fork this repository and submit pull requests.
+
+## License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
