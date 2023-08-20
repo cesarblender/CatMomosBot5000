@@ -2,7 +2,7 @@ from io import BytesIO
 
 from src.sources.from_api import get_picsum_photo, get_random_cat
 from src.pil.convert_to_pil_image import convert_to_pil_img
-from pil.create_comparison_image import create_comparison_image
+from src.pil.create_comparison_image import create_comparison_image
 from src.facebook.create_content import create_comment, create_post_with_image
 
 
