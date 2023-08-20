@@ -10,6 +10,4 @@ def promote_github(post_id: str):
         "{}".format(github_link)
     )
 
-    print(comment_text)
-
     create_comment(post_id, comment_text)
