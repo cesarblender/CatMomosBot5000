@@ -8,6 +8,12 @@ source_images = {
     "normal": "https://cataas.com/cat"
 }
 
+picsum_sources = [
+    "https://picsum.photos/64/64",
+    "https://picsum.photos/32/32",
+    "https://picsum.photos/16/16"
+]
+
 def get_random_cat():
     keys = list(source_images.keys())
     source = random.choice(keys)
@@ -26,5 +32,10 @@ def get_cat(source_type: str):
     source_image = source_images[source_type]
 
     response = requests.get(source_image)
+
+    return response.content
+
+def get_picsum_photo():
+    response = requests.get(random.choice(picsum_sources))
 
     return response.content
