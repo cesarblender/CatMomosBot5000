@@ -9,3 +9,5 @@ def create_boomer_post():
     post_id = create_post_with_image(content=text, image=image)
 
     create_comment(post_id=post_id, message=get_info(params, "External API"))
+
+    return post_id

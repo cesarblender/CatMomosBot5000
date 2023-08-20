@@ -17,3 +17,5 @@ def create_comparison_post():
     post_id = create_post_with_image(content="Comparison Momo", image=image_bytes)
 
     create_comment(post_id=post_id, message="hola amigos soy el bot los quiero saludos soy el bot.")
+
+    return post_id

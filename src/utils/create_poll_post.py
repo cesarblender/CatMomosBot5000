@@ -20,3 +20,5 @@ def create_poll_post():
 
     create_comment(
         post_id=post_id, message="hola amigos como estan soy el bot los quiero mucho saludos soy el bot")
+    
+    return post_id
