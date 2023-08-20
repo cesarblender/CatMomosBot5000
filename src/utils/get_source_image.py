@@ -1,8 +1,6 @@
 import random
-from src.sources.from_api import get_random_cat
+from src.sources.from_api import get_random_cat, get_picsum_photo
 
-"""
-TODO: Add more source image providers
-"""
+
 def get_random_source():
-    return get_random_cat()
+    return random.choice([get_random_cat(), get_picsum_photo()])
